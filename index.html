@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>Make your own recipes</title>
+</head>
+<body>
+<!-- ########################## HEADER ############################ -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <ul class="nav_list">
+                <div class="nav_socials-login">
+                    <li class="nav_item">
+                        <a href="#" class="nav_link">
+                            <i class="ri-facebook-box-line"></i>
+                        </a>
+                    </li>
+    
+                    <li class="nav_item">
+                        <a href="#" class="nav_link">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                    </li>
+    
+                    <li class="nav_item">
+                        <a href="#" class="nav_link">
+                            <i class="ri-twitter-x-line"></i>
+                        </a>
+                    </li>
+                </div>
+
+                <div class="nav_log-search nav_socials-login">
+                    <li class="nav_item" id="search">
+                        <i class="ri-search-line"></i>
+                    </li>
+    
+                    <li class="nav_item">
+                        <button class="login-btn" id="log-in">
+                            Login
+                        </button>
+                    </li>
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+<!-- ########################## LOGIN FORM ############################ -->
+<div class="wrapper">
+    <span class="close" id="close">
+        <i class="ri-close-line"></i>
+    </span>
+
+    <div class="form-box">
+        <h2 class="login_title">
+            Login
+        </h2>
+
+        <form class="login-form" action="#">
+            <div class="input_box"> 
+                <label><i class="ri-mail-line"></i></label>
+                <input type="email" required placeholder="Email">
+            </div>
+            
+            <div class="input_box">
+                <label><i class="ri-lock-password-line"></i></label>
+                <input type="password" required placeholder="Password">
+                <span class="vis-pas" id="pas-vis"><i class="ri-eye-off-line"></i></span>
+            </div>
+
+            <div class="forgotten_remember">
+                <label>
+                    <input type="checkbox">Remember me
+                </label>
+                <a href="#" class="forgotten_pas">
+                    Forgotten Password
+                </a>
+            </div>
+
+            <button class="submit" type="submit">
+                Login
+            </button>
+        </form>
+
+        <div class="alternative_login">
+            <h3 class="subtitle">
+                Or login with 
+            </h3>
+
+            <div class="alternative_buttons">
+                <button class="fb_btn">
+                    <i class="ri-facebook-box-line"></i> Facebook
+                </button>
+               
+                <button class="gmail_btn">
+                    <i class="ri-google-line"></i> Google
+                </button>
+            </div>
+        </div>
+
+        <div class="register">
+            <p>
+                Don't have an account? <a href="#">Register!</a>
+            </p>
+        </div>
+    </div>
+</div>
+    
+    <script src="./script.js"></script>
+</body>
+</html>

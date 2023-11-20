@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+:root{
+    --text-color: black;
+    --body-color: #F0F8FF;
+    --accent-color: #B6C9FF;
+    --contrast-text-color: #3E3DFF;
+    --hover-color: 	#252498;
+    --text-color-light: hsl(204, 3%, 34%);
+    
+    --body-font: 'Roboto', sans-serif;
+    --title-font:'Lora', serif;
+
+    --font-medium: 500;
+    --font-semi-bold: 600;
+
+    --biggest-font-size: 3rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+    --tiny-font-size: .688rem;
+}
+
+body{
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--body-color);
+    color: var(--text-color);
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.subtitle{
+    font-size: var(--small-font-size);
+    font-weight: var(--font-semi-bold);
+    margin-bottom: .25rem;
+    color: var(--text-color-light);
+}
+
+.container{
+    max-width: 1024px;
+    margin-inline: 1.5rem;
+    
+}
+
+.header{
+    padding: 15px;
+    background-color: var(--accent-color);
+}
+
+.nav_list{
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav_socials-login{
+    display: flex;
+    align-items: center;
+    column-gap: .75rem;
+}
+
+.nav_link,
+.nav_item{
+    color: var(--contrast-text-color);
+    transition: color .3s;
+}
+
+.nav_link i,
+.nav_item i{
+    font-size: 1.5rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.nav_link i:hover,
+.nav_item i:hover{
+ color: var(--hover-color);
+}
+
+.login-btn{
+    padding: 2px 15px;
+    background-image: linear-gradient(to right, #3e3dff 0%, #5757ff  51%, #7170ff  100%);
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    border-radius: 10px;
+    border: none;
+    display: block;
+}
+
+.login-btn:hover {
+    background-position: right center;
+    color: white;
+    text-decoration: none;
+}
+
+.wrapper{
+    position: relative;
+    width: 380px;
+    height: 400px;
+    background: rgba(54, 25, 25, .00004);;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* transform: scale(0); */
+    transition: transform .5s ease, height .2s;
+}
+
+.wrapper .form-box{
+    width: 100%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input_box{
+    border-bottom: 2px solid var(--accent-color);
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+}
+
+.input_box input{
+    border: none;
+    width: 90%;
+    background-color: var(--body-color);
+    margin-bottom: 5px;
+    outline: none;
+}
+
+.input_box i{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.vis-pas:hover{
+    cursor: pointer;
+    color: var(--contrast-text-color);
+}
+
+.forgotten_remember{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 10px;
+}
+
+input[type = checkbox]{
+    accent-color: var(--contrast-text-color);
+}
+
+.forgotten_remember label{
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.submit{
+    border: none;
+    background-color: var(--accent-color);
+    border-radius: 10px;
+    width: 100%;
+    padding: 10px;
+    align-self: center;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: background-color .3s;
+}
+
+.submit:hover{
+    background-color: var(--contrast-text-color);
+}
+
+.alternative_login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.alternative_buttons{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.fb_btn,
+.gmail_btn{
+    padding: 5px 20px;
+    border: 2px solid;
+    border-radius: 5px;
+    background: none;
+    cursor: pointer;
+    font-size: var(--small-font-size);
+}
+
+.fb_btn{
+    color: #316FF6;
+}
+
+.gmail_btn{
+    color: #be8f01;
+}
+
+.wrapper .close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: var(--accent-color);
+    font-size: 2em;
+    color: var(--contrast-text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+    transition: background-color .5s;
+}
+
+.close:hover{
+    background-color: var(--contrast-text-color);
+    color: var(--accent-color);
+}
