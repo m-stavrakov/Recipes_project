@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="./style.css">
     <title>Make your own recipes</title>
 </head>
@@ -50,79 +51,132 @@
 
     <!-- ########################## LOGIN FORM ############################ -->
     <section class="login-pop">
-        <div class="wrapper">
-            <span class="close" id="close">
-                <i class="ri-close-line"></i>
-            </span>
-        
-            <div class="form-box">
-                <h2 class="login_title">
-                    Login
-                </h2>
-        
-                <form class="login-form" action="#">
-                    <div class="input_box" id="email-box"> 
-                        <label class="icon_email"><i class="ri-mail-line"></i></label>
-                        <input type="email" required placeholder="Email" class="input_email">
-                    </div>
-                    
-                    <div class="input_box" id="password-box">
-                        <label class="icon_password"><i class="ri-lock-password-line"></i></label>
-                        <input type="password" required autocomplete="off" placeholder="Password" class="input_password">
-                        <span id="pas-vis"><i class="ri-eye-off-line" id="eye"></i></span>
-                    </div>
-        
-                    <div class="forgotten_remember">
-                        <label>
-                            <input type="checkbox">Remember me
-                        </label>
-                        <a href="#" class="forgotten_pas">
-                            Forgotten Password
-                        </a>
-                    </div>
-        
-                    <button class="submit" type="submit">
+            <div class="wrapper">
+                <span class="close" id="close">
+                    <i class="ri-close-line"></i>
+                </span>
+            
+                <div class="form-box">
+                    <h2 class="login_title">
                         Login
-                    </button>
-                </form>
-        
-                <div class="alternative_login">
-                    <h3 class="subtitle">
-                        Or login with 
-                    </h3>
-        
-                    <div class="alternative_buttons">
-                        <button class="fb_btn">
-                            <i class="ri-facebook-box-line"></i> Facebook
+                    </h2>
+            
+                    <form class="login-form" action="#">
+                        <div class="input_box" id="email-box"> 
+                            <label class="icon_email"><i class="ri-mail-line"></i></label>
+                            <input type="email" required placeholder="Email" class="input_email input">
+                        </div>
+                        
+                        <div class="input_box" id="password-box">
+                            <label class="icon_password"><i class="ri-lock-password-line"></i></label>
+                            <input type="password" required autocomplete="off" placeholder="Password" class="input_password input">
+                            <span id="pas-vis"><i class="ri-eye-off-line" id="eye"></i></span>
+                        </div>
+            
+                        <div class="forgotten_remember">
+                            <label>
+                                <input type="checkbox">Remember me
+                            </label>
+                            <a href="#" class="forgotten_pas">
+                                Forgotten Password
+                            </a>
+                        </div>
+            
+                        <button class="submit" type="submit">
+                            Login
                         </button>
-                    
-                        <button class="gmail_btn">
-                            <i class="ri-google-line"></i> Google
-                        </button>
+                    </form>
+            
+                    <div class="alternative_login">
+                        <h3 class="subtitle">
+                            Or login with 
+                        </h3>
+            
+                        <div class="alternative_buttons">
+                            <button class="fb_btn">
+                                <i class="ri-facebook-box-line"></i> Facebook
+                            </button>
+                        
+                            <button class="gmail_btn">
+                                <i class="ri-google-line"></i> Google
+                            </button>
+                        </div>
                     </div>
-                </div>
-        
-                <div class="register">
-                    <p>
-                        Don't have an account? <a href="#" class="register_link">Register!</a>
-                    </p>
+            
+                    <div class="register">
+                        <p>
+                            Don't have an account? <a href="#" class="register_link">Register!</a>
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
     </section>
 
     <!-- ########################## LOGO AND NAVIGATION ############################ -->
-    <section class="carousel container">
+    <section class="container logo_nav">
         <h1 class="title">
             tasty life
         </h1>
 
         <nav class="nav container">
             <ul class="navigation_list">
+                <li>
+                   <a href="#" class="nav-item_l">
+                    Home Page 
+                   </a> 
+                </li>
 
+                <li>
+                    <a href="#" class="nav-item_l">
+                    Categories
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="nav-item_l">
+                    Make your own
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="nav-item_l">                    
+                    Search
+                    </a>
+                </li>
             </ul>
         </nav>
     </section>
+
+    <!-- ########################## CAROUSEL ############################ -->
+    <section class="carousel" id="carousel">
+        <div class="carousel-inner" data-carousel>
+                <button class="carousel-btn prev" data-carousel-btn="prev">
+                    <i class="ri-arrow-left-s-line"></i>
+                </button>
+                <button class="carousel-btn next" data-carousel-btn="next">
+                    <i class="ri-arrow-right-s-line"></i>
+                </button>
+
+            <ul data-slides>
+                <li class="slide">
+                    <img src="./images/burger.jpg" alt="">
+                </li>
+                <li class="slide">
+                    <img src="./images/salad.jpg" alt="">
+                </li>
+                <li class="slide">
+                    <img src="./images/salmon.jpg" alt="">
+                </li>
+                <li class="slide">
+                    <img src="./images/pancakes.jpg" alt="">
+                </li>
+                <li class="slide">
+                    <img src="./images/pizza.jpg" alt="">
+                </li>
+            </ul>
+        </div>
+    </section>
+
     <script src="./script.js"></script>
 </body>
 </html>

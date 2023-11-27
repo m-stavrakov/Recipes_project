@@ -7,7 +7,10 @@ const passwordInput = document.querySelector('.input_password');
 const iconEmail = document.querySelector('.icon_email');
 const iconPassword = document.querySelector('.icon_password');
 const eye = document.getElementById('eye');
-console.log('Eye: ', eye)
+const slides = document.querySelectorAll('.slide');
+const prevSlide = document.querySelector('prev');
+const nextSlide = document.querySelector('next');
+// const carouselBtn = document.querySelectorAll('[data-carousel-btn]');
 
 // ##################### OPEN AND CLOSE LOGIN ##################
 logIn.addEventListener('click', () => {
@@ -53,3 +56,60 @@ eye.addEventListener('click', () => {
         eye.classList.add("ri-eye-line");
       }
 });
+
+// ##################### CAROUSEL ##################
+// carouselBtn.forEach(button => {
+//   button.addEventListener('click', () => {
+//     const offset = carouselBtn === "next" ? 1 : -1;
+//     const slides = button
+//       .closest("[data-carousel]")
+//       .querySelectorAll("[data-slides]");
+
+//     const activeSlide = slides.querySelector('[data-active]');
+//     let newIndexSlide = [...slides.children]//converts slides into an array
+//       .indexOf(activeSlide) + offset;
+
+//     if(newIndexSlide < 0) {
+//       newIndexSlide = slides.children.length - 1;
+//     }else if (newIndexSlide >= slides.children.length){
+//       newIndexSlide = 0;
+//     }
+
+//     slides.children[newIndexSlide].dataset.active = true; //adds the data-active to the new current slide
+//     delete activeSlide.dataset.active; //deletes it from the previous one
+//   })
+// });
+let curSlide = 0;
+let maxSlide = slides.length - 1;
+
+moveSlide(curSlide);
+
+//next slide
+nextSlide.addEventListener('click', () => {
+  if (curSlide === maxSlide) {
+    curSlide = 0;
+  }else{
+    curSlide++
+  }
+
+  moveSlide(curSlide);
+});
+
+//previous slide
+prevSlide.addEventListener('click', () => {
+  if (curSlide === 0){
+    curSlide = maxSlide;
+  }else{
+    curSlide--;
+  }
+
+  moveSlide(curSlide);
+});
+
+function moveSlide(curSlide) {
+  slides.forEach((slide, indx) => {
+    slide.getElementsByClassName.transform = `translateX(${100 * (indx - curSlide)}%)`
+  });
+}
+
+console.log(curSlide);
