@@ -12,7 +12,7 @@
 <body>
     <!-- ########################## HEADER ############################ -->
     <header class="header" id="header">
-        <div class="container">
+        <div>
             <ul class="header_list">
                 <div class="header_socials-login">
                     <li class="header_item">
@@ -113,12 +113,12 @@
     </section>
 
     <!-- ########################## LOGO AND NAVIGATION ############################ -->
-    <section class="container logo_nav">
+    <section class="logo_nav">
         <h1 class="title">
             tasty life
         </h1>
 
-        <nav class="nav container">
+        <nav class="nav">
             <ul class="navigation_list">
                 <li>
                    <a href="#" class="nav-item_l">
@@ -127,7 +127,7 @@
                 </li>
 
                 <li>
-                    <a href="#" class="nav-item_l">
+                    <a href="#categories" class="nav-item_l">
                     Categories
                     </a>
                 </li>
@@ -159,24 +159,141 @@
 
             <ul data-slides>
                 <li class="slide">
-                    <img src="./images/burger.jpg" alt="">
+                    <p class="carousel_text slide-1">
+                        Easy homemade beef burger
+                    </p>
+                    <img src="./images/burger.jpg" alt="burger">
                 </li>
                 <li class="slide">
-                    <img src="./images/salad.jpg" alt="">
+                    <p class="carousel_text slide-2">
+                        Quinoa Kale Salad With Peaches
+                    </p>
+                    <img src="./images/salad.jpg" alt="salad">
                 </li>
                 <li class="slide">
-                    <img src="./images/salmon.jpg" alt="">
+                    <p class="carousel_text slide-3">
+                        Pan roasted salmon with vegetables
+                    </p>
+                    <img src="./images/salmon.jpg" alt="salmon">
                 </li>
                 <li class="slide">
-                    <img src="./images/pancakes.jpg" alt="">
+                    <p class="carousel_text slide-4">
+                        Dark chocolate cherry muffins
+                    </p>
+                    <img src="./images/muffins.jpg" alt="muffins">
                 </li>
                 <li class="slide">
-                    <img src="./images/pizza.jpg" alt="">
+                    <p class="carousel_text slide-5">
+                        the ultimate veggie pizza
+                    </p>
+                    <img src="./images/pizza.jpg" alt="pizza">
                 </li>
             </ul>
         </div>
     </section>
 
+    <!-- ########################## CATEGORIES ############################ -->
+    <section class="categories container"  id="categories">
+        <h3 class="categories-title">
+            popular categories
+        </h3>
+
+        <div class="rows">
+            <div class="categories_row">
+                <figure class="figure_categories">
+                    <div class="inner_img">
+                        <img src="./images/salad-categories.jpg" alt="salad">
+                    </div>
+                    <figcaption class="fig_text">
+                        Salad
+                    </figcaption>
+                </figure>
+            </div>
+    
+            <div class="categories_row">
+                <figure class="figure_categories">
+                    <div class="inner_img">
+                        <img src="./images/pasta-categories.jpg" alt="pasta">
+                    </div>
+                    <figcaption class="fig_text">
+                        Pasta
+                    </figcaption>
+                </figure>
+            </div>
+    
+            <div class="categories_row">
+                <figure class="figure_categories">
+                    <div class="inner_img">
+                        <img src="./images/salmon-categories.jpg" alt="salmon">
+                    </div>
+                    <figcaption class="fig_text">
+                        Seafood
+                    </figcaption>
+                </figure>
+            </div>
+    
+            <div class="categories_row">
+                <figure class="figure_categories">
+                    <div class="inner_img">
+                        <img src="./images/vegan-categories.jpg" alt="vegan-food">
+                    </div>
+                    <figcaption class="fig_text">
+                        Vegan
+                    </figcaption>
+                </figure>
+            </div>
+        
+            <div class="categories_row">
+                <figure class="figure_categories">
+                    <div class="inner_img">
+                        <img src="./images/pizza-categories.jpg" alt="pizza">
+                    </div>
+                    <figcaption class="fig_text">
+                        Pizza
+                    </figcaption>
+                </figure>
+            </div>
+        
+            <div class="categories_row">
+                <figure class="figure_categories">
+                    <div class="inner_img">
+                        <img src="./images/dessert-categories.jpg" alt="dessert">
+                    </div>
+                    <figcaption class="fig_text">
+                        Dessert
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+        <!-- ########################## RECIPES ############################ -->
+        <section class="top_recipes">
+            <h3 class="recipes_section-title" id="recipe-title">
+                Specific title
+            </h3>
+
+            <div class="recipes_container">
+                <div class="recipe-1">
+                    <figure class="figure_recipe">
+                        <a href="#" class="recipe_img-link">
+                            <img src="" alt="">
+                        </a>
+
+                        <figcaption class="fig_text-container">
+                            <div class="stars_container">
+                                <div class="stars_inner">
+                                    <div class="stars">
+                                        <input type="radio" id="radio1" name="rate1" value="1" checked="checked">
+                                        <label for="radio1" class="star-rating"><i class="ri-star-line"></i></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
     <script src="./script.js"></script>
 </body>
 </html>

@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap&family=Lobster&display=swap&family=Playfair+Display+SC&display=swap&family=Playfair+Display:wght@400;600&display=swap');
 
 *{
     box-sizing: border-box;
@@ -17,7 +16,9 @@
     --text-color-light: hsl(204, 3%, 34%);
     
     --body-font: 'Roboto', sans-serif;
-    --title-font:'Lobster', serif;
+    --title-font: 'Lobster', sans-serif;
+    --recipe-title: 'Playfair Display SC', sans-serif;
+    --smaller-titles-font: 'Playfair Display', sans-serif;
 
     --font-medium: 500;
     --font-semi-bold: 600;
@@ -56,15 +57,14 @@ a{
 }
 
 .container{
-    /* max-width: 1024px; */
-    /* margin-inline: 1.5rem; */
+    margin-inline: 1.5rem;
 }
 
 /* ######################## HEADER ###################*/
 .header{
     padding: 15px;
     /* background-color: var(--accent-color); */
-    background: url(./images/19742.jpg);
+    background: url(./images/pattern-header.jpg);
     background-size: 300px;
 }
 
@@ -346,10 +346,6 @@ input[type = checkbox]{
     color: var(--contrast-text-color) !important;
 }
 
-/* .nav_item{
-    position: relative;
-} */
-
 .nav-item_l:after{
     content: '';
     position: absolute;
@@ -369,12 +365,21 @@ input[type = checkbox]{
 }
 
 /* ######################## CAROUSEL ###################*/
-.carousel{
-    /* width: 90%; */
-    /* height: 40%; */
-    aspect-ratio: 1 /1 ;
+/* .carousel{
+    width: 100%;
+    height: 40%;
+    aspect-ratio: 1 /1;
+    width: 100vw;
+    height: 100vh;
     position: relative;
     margin: 0 auto;
+} */
+
+.carousel-inner{
+    position: relative;
+    height: 80vh;
+    width: 100vw;
+    overflow: hidden;
 }
 
 .carousel > ul {
@@ -386,6 +391,10 @@ input[type = checkbox]{
 .slide{
     position: absolute;
     inset: 0;
+    transition: all 1s;
+    /* width: 100%; */
+    /* max-width: 80%; */
+    /* transition: transform 1s; */
     /* width: 100%; */
     /* height: 40%; */
     /* opacity: 0; */
@@ -393,16 +402,16 @@ input[type = checkbox]{
 
 .slide > img {
     display: block;
-    width: 80%;
-    height: 40%;
+    width: 100%;
+    height: 100%;
     margin: auto;
     object-fit: cover;
     object-position: center; 
 }
 
-.slide[data-active]{
+/* .slide[data-active]{
     opacity: 1;
-}
+} */
 
 .carousel-btn{
     position: absolute;
@@ -410,8 +419,8 @@ input[type = checkbox]{
     border: none;
     font-size: 4rem;
     color: rgba(255, 255, 255, .5);
-    top: 20%;
-    transform: translateY(-20%);
+    top: 50%;
+    transform: translateY(-50%);
     z-index: 2;
     cursor: pointer;
     border-radius: .25rem;
@@ -423,9 +432,100 @@ input[type = checkbox]{
 }
 
 .carousel-btn.prev{
-    left: 9rem;
+    left: 1rem;
 }
 
 .carousel-btn.next{
-    right: 9rem;
+    right: 1rem;
+}
+
+
+.carousel_text{
+    position: absolute;
+    width: 30%;
+    color: white;
+    font-family: var(--recipe-title);
+    font-size: var(--biggest-font-size);
+    text-transform: uppercase;
+}
+
+.slide-1{
+    top: 73%;
+    left: 5%;
+}
+
+.slide-2{
+    top: 70%;
+    left: 2%;
+}
+
+.slide-3{
+    top: 70%;
+    left: 5%;
+}
+
+.slide-4{
+    top: 73%;
+    left: 5%;
+}
+
+.slide-5{
+    top: 73%;
+    left: 5%;
+}
+
+/* ######################## CAROUSEL ###################*/
+.categories{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.categories-title{
+    font-family: var(--smaller-titles-font);
+    font-size: var(--h1-font-size);
+    text-transform: capitalize;
+
+}
+
+.rows{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.figure_categories{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    transition: color .3s;
+}
+
+.inner_img{
+    width: 160px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.figure_categories:hover{
+    color: var(--contrast-text-color);
+}
+
+.inner_img > img{
+    width: 100%;
+    height: 100%;
+    transition: transform .3s ease-in-out;
+}
+
+.inner_img > img:hover{
+    transform: scale(1.1);
+}
+
+.fig_text{
+ font-family: var(--body-font);
+ font-weight: 600;
 }

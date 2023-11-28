@@ -8,8 +8,8 @@ const iconEmail = document.querySelector('.icon_email');
 const iconPassword = document.querySelector('.icon_password');
 const eye = document.getElementById('eye');
 const slides = document.querySelectorAll('.slide');
-const prevSlide = document.querySelector('prev');
-const nextSlide = document.querySelector('next');
+const prevSlide = document.querySelector('.prev');
+const nextSlide = document.querySelector('.next');
 // const carouselBtn = document.querySelectorAll('[data-carousel-btn]');
 
 // ##################### OPEN AND CLOSE LOGIN ##################
@@ -108,8 +108,6 @@ prevSlide.addEventListener('click', () => {
 
 function moveSlide(curSlide) {
   slides.forEach((slide, indx) => {
-    slide.getElementsByClassName.transform = `translateX(${100 * (indx - curSlide)}%)`
+      slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
   });
 }
-
-console.log(curSlide);
