@@ -154,3 +154,45 @@ if (localStorage.getItem('rating')){
     }
   }
 }
+
+// ##################### RECIPE SHOW AND HIDE ##################
+const toggleCategories = document.querySelectorAll('.categories_row');
+const toggleRecipes = document.querySelectorAll('.top_recipes');
+const recipesTitle = document.querySelectorAll('.recipes_section-title');
+
+toggleCategories.forEach(category => {
+  category.addEventListener('click', function() {
+    const targetId = this.getAttribute('data-list');
+    const targetRecipe = document.getElementById(targetId);
+
+      if (targetRecipe.style.display === 'block'){
+        targetRecipe.style.display = 'none';
+      }else {
+        toggleRecipes.forEach(recipe => {
+          if (recipe.id === targetId){
+            recipe.style.display = 'block';
+          }else {
+            recipe.style.display = 'none';
+          }
+
+          switch(targetId){
+            case 'tab_1': recipesTitle[0].innerHTML = 'Salads';
+            break;
+            case 'tab_2': recipesTitle[1].innerHTML = 'Pasta';
+            break;
+            case 'tab_3': recipesTitle[2].innerHTML = 'Seafood';
+            break;
+            case 'tab_4': recipesTitle[3].innerHTML = 'Vegan';
+            break;
+            case 'tab_5': recipesTitle[4].innerHTML = 'Pizza';
+            break;
+            case 'tab_6': recipesTitle[5].innerHTML = 'Dessert';
+            break;
+            default:
+              break;
+          }
+        });
+      }
+  });
+});
+

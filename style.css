@@ -572,12 +572,15 @@ input[type = checkbox]{
     flex-direction: column;
     gap: 20px;
     margin-bottom: 50px;
+    display: none;
 }
 
 .recipes_section-title{
     font-family: var(--smaller-titles-font);
     font-size: var(--h2-font-size);
     text-transform: capitalize;
+    margin-left: 115px;
+    margin-bottom: 20px;
 }
 
 .recipes_container{
