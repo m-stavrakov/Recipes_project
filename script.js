@@ -111,3 +111,46 @@ function moveSlide(curSlide) {
       slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
   });
 }
+
+// ##################### STAR RATING ##################
+let stars = document.querySelectorAll(".rating_container span");
+let products = document.querySelectorAll(".rating_container");
+let ratings = [];
+
+for (let star of stars){
+  star.addEventListener('click', function(){
+    let ratingChildren = star.parentElement.children;
+    for(let child of ratingChildren){
+      if(child.getAttribute('data-clicked')){
+        return false; //preventing us to rate the same product twice
+      }
+    }
+    
+    this.setAttribute('data-clicked', 'true');
+    // storing the ratings
+    let rating = this.dataset.rating;
+    let productId = this.parentElement.dataset.productid;
+
+    let data = {
+      'stars': rating,
+      'product-id': productId
+    }
+
+    ratings.push(data);
+    localStorage.setItem('rating', JSON.stringify(ratings));
+  });
+}
+
+//storing the rating even after reload
+if (localStorage.getItem('rating')){
+  ratings = JSON.parse(localStorage.getItem('rating'));
+  for (let rating of ratings){
+    for (let product of products){
+      if (rating['product-id'] === product.dataset.productid){
+        let reversedStars = Array.from(product.children).reverse();
+        let indexStars = parseInt(rating['stars']) - 1;
+        reversedStars[indexStars].setAttribute('data-clicked', 'true');
+      }
+    }
+  }
+}
