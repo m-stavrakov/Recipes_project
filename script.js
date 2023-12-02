@@ -195,4 +195,3 @@ toggleCategories.forEach(category => {
       }
   });
 });
-
