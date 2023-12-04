@@ -63,7 +63,6 @@ a{
 /* ######################## HEADER ###################*/
 .header{
     padding: 15px;
-    /* background-color: var(--accent-color); */
     background: url(./images/pattern-header.jpg);
     background-size: 300px;
 }
@@ -71,6 +70,7 @@ a{
 .header_list{
     display: flex;
     justify-content: space-between;
+    gap: 30px;
     margin: 0 80px;
 }
 
@@ -449,28 +449,12 @@ input[type = checkbox]{
     text-transform: uppercase;
 }
 
-.slide-1{
-    top: 73%;
-    left: 5%;
-}
-
-.slide-2{
-    top: 70%;
-    left: 2%;
-}
-
-.slide-3{
-    top: 70%;
-    left: 5%;
-}
-
-.slide-4{
-    top: 73%;
-    left: 5%;
-}
-
+.slide-1,
+.slide-2,
+.slide-3,
+.slide-4,
 .slide-5{
-    top: 73%;
+    top: 5%;
     left: 5%;
 }
 
@@ -490,7 +474,7 @@ input[type = checkbox]{
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 50px;
     margin-top: 30px;
 }
 
@@ -535,7 +519,6 @@ input[type = checkbox]{
 .comment_container{
     display: inline-block;
     margin-bottom: 20px;
-    /* padding: 0 10px; */
 }
 
 .rating_container{
@@ -579,14 +562,13 @@ input[type = checkbox]{
     font-family: var(--smaller-titles-font);
     font-size: var(--h2-font-size);
     text-transform: capitalize;
-    margin-left: 115px;
+    text-align: center;
     margin-bottom: 20px;
 }
 
 .recipes_container{
     display: flex;
     flex-wrap: wrap;
-    /* align-items: center; */
     justify-content: space-evenly;
     gap: 30px;
 }
@@ -712,6 +694,7 @@ small{
 .info{
     width: 50%;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-evenly;
     gap: 50px;
@@ -746,6 +729,8 @@ small{
     margin-top: 30px;
     border-top: 1px solid var(--text-color-light);
     justify-content: space-between;
+    align-items: center;
+    gap: 10px;
     color: var(--text-color-light);
 }
 
@@ -769,4 +754,29 @@ small{
 
 .socials_footer-items a:hover{
     color: var(--contrast-text-color);
+}
+
+/* SCREEN DIMENSIONS */
+@media screen and (max-width: 767px){
+    .header_list{
+        margin: 0;
+    }
+
+    .carousel-inner{
+        height: 50vh;
+    }
+
+    .carousel_text{
+        font-size: var(--h3-font-size);
+    }
+
+    .footer_container{
+        flex-direction: column;
+    }
+
+    .footer_inner{
+        width: 100%;
+    }
+
+
 }
