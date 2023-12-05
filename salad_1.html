@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="icon" href="./images/salad-icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css">
+    <title>Italian Chopped Salad</title>
+</head>
+<body id="test">
+  <!-- ########################## HEADER ############################ -->
+  <header class="header" id="header">
+    <ul class="header_list">
+      <li class="header_item">
+        <h3 class="small_logo">
+          tasty life
+        </h3>
+      </li>
+
+      <div class="header_recipe-nav">
+        <li class="header_recipe-list">
+          <a href="./index.html" class="nav-item">
+            Home Page 
+           </a> 
+        </li>
+
+        <li class="header_recipe-list">
+          <a href="#" class="nav-item">                    
+            Search
+          </a>
+        </li>
+
+        <li class="header_item">
+          <button class="login-btn" id="log-in">
+              Login
+          </button>
+      </li>
+      </div>
+    </ul>
+  </header>
+
+  <section class="login-pop">
+    <div class="wrapper">
+        <span class="close" id="close">
+            <i class="ri-close-line"></i>
+        </span>
+    
+        <div class="form-box">
+            <h2 class="login_title">
+                Login
+            </h2>
+    
+            <form class="login-form" action="#">
+                <div class="input_box" id="email-box"> 
+                    <label class="icon_email"><i class="ri-mail-line"></i></label>
+                    <input type="email" required placeholder="Email" class="input_email input">
+                </div>
+                
+                <div class="input_box" id="password-box">
+                    <label class="icon_password"><i class="ri-lock-password-line"></i></label>
+                    <input type="password" required autocomplete="off" placeholder="Password" class="input_password input">
+                    <span id="pas-vis"><i class="ri-eye-off-line" id="eye"></i></span>
+                </div>
+    
+                <div class="forgotten_remember">
+                    <label>
+                        <input type="checkbox">Remember me
+                    </label>
+                    <a href="#" class="forgotten_pas">
+                        Forgotten Password
+                    </a>
+                </div>
+    
+                <button class="submit" type="submit">
+                    Login
+                </button>
+            </form>
+    
+            <div class="alternative_login">
+                <h3 class="subtitle">
+                    Or login with 
+                </h3>
+    
+                <div class="alternative_buttons">
+                    <button class="fb_btn">
+                        <i class="ri-facebook-box-line"></i> Facebook
+                    </button>
+                
+                    <button class="gmail_btn">
+                        <i class="ri-google-line"></i> Google
+                    </button>
+                </div>
+            </div>
+    
+            <div class="register">
+                <p>
+                    Don't have an account? <a href="#" class="register_link">Register!</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+  <!-- ########################## MAIN ############################ -->
+  <section class="recipe_main">
+    <div class="title_container">
+      <div class="share_save-icons">
+        <i class="ri-share-line"></i>
+        <i class="ri-flag-line"></i>
+      </div>
+
+      <h1 class="recipe_page-title">
+        Italian Chopped Salad
+      </h1>
+
+      <div class="recipe_page-creator-1">
+        <div data-productid="salad-1" class="rating_container">
+            <span data-rating="5">&#9733;</span>
+            <span data-rating="4">&#9733;</span>
+            <span data-rating="3">&#9733;</span>
+            <span data-rating="2">&#9733;</span>
+            <span data-rating="1">&#9733;</span>
+        </div>
+
+        <div class="recipe_author_new">
+          <img src="./images/avatar-woman.jpg" alt="avatar woman" class="avatar_new">
+          <small>Samantha Keys</small>
+        
+          <div class="details">
+              <div class="date">
+                  <i class="ri-calendar-line"></i>
+                  <small>23/03/2023</small>
+              </div>
+
+              <div class="comments">
+                  <i class="ri-chat-2-line"></i>
+                  <small>429</small>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="img_main">
+      <img src="./images/chopped-salad.jpg" alt="chopped salad">
+    </div>
+
+    <div class="prepare_times">
+      <div class="prep">
+        <small class="prep_text">prep time</small>
+        <p>20 min</p>
+      </div>
+
+      <div class="prep">
+        <small class="prep_text">cook time</small>
+        <p>15 min</p>
+      </div>
+
+      <div class="prep">
+        <small class="prep_text">servings</small>
+        <p>6 people</p>
+      </div>
+
+      <div class="print_icon">
+        <i class="ri-printer-line"></i>
+      </div>
+    </div>
+
+    <div class="ingredients">
+      <h3 class="ingredients_prep-title">
+        Ingredients
+      </h3>
+
+      <ul class="ingredients_list">
+
+        <div class="ingredients_list-one">
+          <strong>
+            lemon vinaigrette
+          </strong>
+  
+          <li class="ingredients_list-items check">
+            <img src="./images/circle-regular.svg" alt="empty circle" class="unchecked_circle"> 
+            <p>1/4 cup extra-virgin olive oil</p>
+          </li>
+  
+          <li class="ingredients_list-items check">
+            <img src="./images/circle-regular.svg" alt="empty circle" class="unchecked_circle"> 
+            <p>1 1/2 tablespoons lemon juice</p>
+          </li>
+  
+          <li class="ingredients_list-items check">
+            <img src="./images/circle-regular.svg" alt="empty circle" class="unchecked_circle"> 
+            <p>1 tablespoons red wine vinegar</p>
+          </li>
+  
+          <li class="ingredients_list-items check">
+            <img src="./images/circle-regular.svg" alt="empty circle" class="unchecked_circle"> 
+            <p>1/2 shallot, finely chopped</p>
+          </li>
+  
+          <li class="ingredients_list-items check">
+            <img src="./images/circle-regular.svg" alt="empty circle" class="unchecked_circle"> 
+            <p>1 garlic clove, finely chopped</p>
+          </li>
+  
+          <li class="ingredients_list-items check">
+            <img src="./images/circle-regular.svg" alt="empty circle" class="unchecked_circle"> 
+            <p>1 tablespoon dried oregano</p>
+          </li>
+  
+          <li class="ingredients_list-items check">
+            <img src="./images/circle-regular.svg" alt="empty circle" class="unchecked_circle"> 
+            <p>1/2 teaspoon sea salt</p>
+          </li>
+  
+          <li class="ingredients_list-items check">
+            <img src="./images/circle-regular.svg" alt="empty circle" class="unchecked_circle"> 
+            <p>freshly ground black pepper</p>
+          </li>
+          
+        </div>
+
+        <div class="ingredients_list-two">
+          <strong>
+            for the salad
+          </strong>
+  
+          <li class="ingredients_list-items check">
+            <img src="./images/circle-regular.svg" alt="empty circle" class="unchecked_circle"> 
+            <p>1 small head iceberg lettuce</p>
+          </li>
+  
+          <li class="ingredients_list-items check">
+            <img src="./images/circle-regular.svg" alt="empty circle" class="unchecked_circle"> 
+            <p>1 head radicchio</p>
+          </li>
+  
+          <li class="ingredients_list-items check">
+            <img src="./images/circle-regular.svg" alt="empty circle" class="unchecked_circle"> 
+            <p>1/2 small red onion, thinly sliced</p>
+          </li>
+  
+          <li class="ingredients_list-items check">
+            <img src="./images/circle-regular.svg" alt="empty circle" class="unchecked_circle"> 
+            <p>1 pint cherry tomatoes, halved or quartered</p>
+          </li>
+  
+          <li class="ingredients_list-items check">
+            <img src="./images/circle-regular.svg" alt="empty circle" class="unchecked_circle"> 
+            <p>1 can chickpeas, rinsed and drained</p>
+          </li>
+  
+          <li class="ingredients_list-items check">
+            <img src="./images/circle-regular.svg" alt="empty circle" class="unchecked_circle"> 
+            <p>4 ounces fresh pearl mozzarella, drained</p>
+          </li>
+  
+          <li class="ingredients_list-items check">
+            <img src="./images/circle-regular.svg" alt="empty circle" class="unchecked_circle"> 
+            <p>4 ounces provolone cheese, diced</p>
+          </li>
+  
+          <li class="ingredients_list-items check">
+            <img src="./images/circle-regular.svg" alt="empty circle" class="unchecked_circle"> 
+            <p>5 pepperoncini, stemmed and sliced</p>
+          </li>
+  
+          <li class="ingredients_list-items check">
+            <img src="./images/circle-regular.svg" alt="empty circle" class="unchecked_circle"> 
+            <p>1 teaspoons oregano, for garnish</p>
+          </li>
+  
+          <li class="ingredients_list-items check">
+            <img src="./images/circle-regular.svg" alt="empty circle" class="unchecked_circle"> 
+            <p>sea salt and freshly ground black pepper</p>
+          </li>
+        </div>
+      </ul>
+    </div>
+
+    <div class="instructions">
+      <h3 class="ingredients_prep-title">
+        Instructions
+      </h3>
+
+      <ul class="instructions_list">
+        <li class="preparation_list-items check">
+          <img src="./images/circle-regular.svg" alt="empty circle" class="unchecked_circle"> 
+          <p>
+            Make the dressing. In a small bowl, whisk together the olive oil, lemon juice, vinegar, 
+            shallot, garlic, oregano, salt, and pepper, and set aside.
+          </p>
+        </li>
+
+        <li class="preparation_list-items check">
+          <img src="./images/circle-regular.svg" alt="empty circle" class="unchecked_circle"> 
+          <p>
+            Cut the iceberg lettuce in half through the core, 
+            then cut out the core. Slice the lettuce lengthwise into 1/4-inch strips. 
+            Repeat with the radicchio
+          </p>
+        </li>
+
+        <li class="preparation_list-items check">
+          <img src="./images/circle-regular.svg" alt="empty circle" class="unchecked_circle"> 
+          <p>
+            In a large bowl, combine the lettuce, radicchio, tomatoes, chickpeas, mozzarella, provolone, and pepperoncini. 
+            Drizzle with the dressing and toss gently to coat. Season with salt and pepper and toss again. 
+            Sprinkle with extra oregano, and serve.
+          </p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ########################## FOOTER ############################ -->
+  <footer class="footer">
+    <div class="footer_container">
+        <div class="footer_inner">
+            <h3 class="small_logo">
+                tasty life
+            </h3>
+            <p class="quote">
+                "Food, in the end, in our own tradition, 
+                is something holy. It's not about nutrients and calories. 
+                It's about sharing. It's about honesty. It's about identity."
+            </p>
+        </div>
+
+        <div class="info">
+                <ul class="info_content">
+                    <li class="info_title">
+                        tasty life
+                    </li>
+
+                    <li class="info_item">
+                        about us
+                    </li>
+
+                    <li class="info_item">
+                        careers
+                    </li>
+
+                    <li class="info_item">
+                        contact us
+                    </li>
+
+                    <li class="info_item">
+                        feedback
+                    </li>
+                </ul>
+
+                <ul class="info_content">
+                    <li class="info_title">
+                        legal
+                    </li>
+
+                    <li class="info_item">
+                        terms
+                    </li>
+
+                    <li class="info_item">
+                        conditions
+                    </li>
+
+                    <li class="info_item">
+                        cookies
+                    </li>
+
+                    <li class="info_item">
+                        copyright
+                    </li>
+                </ul>
+
+                <ul class="info_content">
+                    <li class="info_title">
+                        follow
+                    </li>
+
+                    <li class="info_item">
+                        facebook
+                    </li>
+
+                    <li class="info_item">
+                        instagram
+                    </li>
+
+                    <li class="info_item">
+                        twitter
+                    </li>
+
+                    <li class="info_item">
+                        YouTube
+                    </li>
+                </ul>
+        </div>
+    </div>
+
+    <div class="footer_lower">
+        <p class="copy_rights">
+            &copy; Martin Stavrakov
+        </p>
+
+        <ul class="socials_footer">
+            <li class="socials_footer-items">
+                <a href="#">
+                    <i class="ri-facebook-box-line"></i>
+                </a>
+            </li>
+
+            <li class="socials_footer-items">
+                <a href="#">
+                    <i class="ri-instagram-line"></i>
+                </a>
+            </li>
+
+            <li class="socials_footer-items">
+                <a href="#">
+                    <i class="ri-twitter-x-line"></i>
+                </a>
+            </li>
+
+            <li class="socials_footer-items">
+                <a href="#">
+                    <i class="ri-youtube-line"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+  </footer>
+
+  <script src="./salad_1.js"></script>
+  <!-- <script src="./script.js"></script> -->
+</body>
+</html>
