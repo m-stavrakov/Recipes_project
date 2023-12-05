@@ -120,12 +120,10 @@ a{
 
 /* ######################## LOGIN ###################*/
 .login-pop{
-    /* position: relative; */
     display: grid;
     place-items: center;
     justify-content: center;
     align-items: center;    
-    /* z-index: 2; */
 }
 
 .wrapper{
@@ -133,11 +131,9 @@ a{
     width: 360px;
     top: 25%;
     height: 430px;
-    /* background: rgba(54, 25, 25, .00004); */
     background-color: var(--body-color);
     border: 2px solid rgba(255, 255, 255, .5);
     border-radius: 20px;
-    /* backdrop-filter: blur(20px); */
     box-shadow: 0 0 30px rgba(0, 0, 0, .5);
     overflow: hidden;
     transform: scale(0);    
@@ -651,6 +647,10 @@ small{
     gap: 5px;
 }
 
+.comments{
+    cursor: pointer;
+}
+
 /* ######################## FOOTER ###################*/
 .footer{
     display: flex;
@@ -777,6 +777,130 @@ small{
     .footer_inner{
         width: 100%;
     }
+}
 
+/* ######################## SALAD RECIPE 1 ###################*/
+.header{
+    margin-bottom: 30px;
+}
 
+.header_recipe-nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.header_recipe-list a{
+    color: var(--text-color);
+    font-size: var(--h3-font-size);
+    transition: color .3s;
+}
+
+.header_recipe-list a:hover{
+    color: var(--contrast-text-color);
+}
+
+.recipe_main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.title_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.share_save-icons{
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    align-items: center;
+}
+
+.share_save-icons i{
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.share_save-icons i:hover{
+    color: var(--contrast-text-color);
+}
+
+.recipe_page-title{
+    font-size: var(--biggest-font-size);
+    font-family: var(--recipe-title);
+}
+
+.recipe_page-creator-1{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.recipe_author_new{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.img_main{
+    overflow: hidden;
+}
+
+.img_main img{
+    width: 100%;
+    height: 600px;
+    margin: 0 auto;
+    border-radius: 15px;
+    object-fit: cover;
+    object-position: center; 
+}
+
+.avatar_new{
+    width: 7%;
+    border-radius: 50%;
+}
+
+.prepare_times{
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.prep{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding-right: 20px;
+    border-right: solid 1px;
+}
+
+.prep small, p{
+    text-transform: uppercase;
+}
+
+.prep p {
+    font-size: var(--small-font-size);
+}
+
+.print_icon{
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.print_icon:hover{
+    color: var(--contrast-text-color);
 }
