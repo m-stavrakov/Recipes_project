@@ -60,35 +60,40 @@ eye.addEventListener('click', () => {
 // ##################### CAROUSEL ##################
 let curSlide = 0;
 let maxSlide = slides.length - 1;
+let carouselPresent = document.getElementById('carousel');
 
+
+
+if (carouselPresent) {
+  //next slide
+  nextSlide.addEventListener('click', () => {
+    if (curSlide === maxSlide) {
+      curSlide = 0;
+    }else{
+      curSlide++
+    }
+
+    moveSlide(curSlide);
+  });
+
+  //previous slide
+  prevSlide.addEventListener('click', () => {
+    if (curSlide === 0){
+      curSlide = maxSlide;
+    }else{
+      curSlide--;
+    }
+
+    moveSlide(curSlide);
+  });
+
+  function moveSlide(curSlide) {
+    slides.forEach((slide, indx) => {
+        slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
+    });
+}
 moveSlide(curSlide);
 
-//next slide
-nextSlide.addEventListener('click', () => {
-  if (curSlide === maxSlide) {
-    curSlide = 0;
-  }else{
-    curSlide++
-  }
-
-  moveSlide(curSlide);
-});
-
-//previous slide
-prevSlide.addEventListener('click', () => {
-  if (curSlide === 0){
-    curSlide = maxSlide;
-  }else{
-    curSlide--;
-  }
-
-  moveSlide(curSlide);
-});
-
-function moveSlide(curSlide) {
-  slides.forEach((slide, indx) => {
-      slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
-  });
 }
 
 // ##################### STAR RATING ##################
@@ -177,13 +182,21 @@ toggleCategories.forEach(category => {
 
 
 // ##################### CHECK LIST ##################
-// let test = document.getElementById('test');
-// test = {
-// const checkItem = document.querySelectorAll('.check');
+const checkItem = document.querySelectorAll('.check');
+const imageChange = document.querySelectorAll('.unchecked_circle');
 
-// checkItem.forEach(unchecked => {
-//   unchecked.addEventListener('click', function() {
-//     this.classList.add('checked');
-//   });
-// });
-// }
+checkItem.forEach(unchecked => {
+  unchecked.addEventListener('click', function() {
+    this.classList.toggle('checked');
+    });
+    imageChange.forEach(circle => {
+      circle.addEventListener('click', function(){
+        const currentImg = circle.getAttribute('src');
+        const unchecked = './images/circle-regular.png';
+        const checked = './images/circle_checked-removebg-preview.png';
+    
+        const newScr = currentImg === unchecked ? checked : unchecked;
+        circle.setAttribute('src', newScr);
+      })
+  });
+});
