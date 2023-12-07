@@ -801,6 +801,7 @@ small{
     color: var(--contrast-text-color);
 }
 
+/* RECIPE CONTENT*/
 .recipe_main{
     display: flex;
     flex-direction: column;
@@ -983,3 +984,107 @@ strong{
     text-decoration: line-through;
     color: var(--text-color-light);
 }
+
+/* COMMENTS FORM */
+.user_comment{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.form_link{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.form_link-title{
+    font-size: var(--biggest-font-size);
+    font-family: var(--smaller-titles-font);
+}
+
+.form_link-button{
+    width: 25%;
+    padding: 10px;
+    background: none;
+    border: 1px solid;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color .4s ease-out;
+}
+
+.form_link-button:hover{
+    background-color: var(--contrast-text-color);
+    color: white;
+}
+
+.form_container{
+    background-color: var(--accent-color);
+    padding: 10px;
+    overflow: scroll;
+    border-radius: 5px;
+}
+
+.form_inner{
+    margin-top: 10px;
+}
+
+.form_hide{
+    display: none;
+}
+
+.comments_form{
+    display: grid;
+    position: relative;
+    margin-left: 60px;
+    row-gap: 1rem;
+}
+
+.input_box-comments{
+    position: relative;
+    height: 4rem;
+}
+
+.input_comment{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 50%;
+    border: 2px solid var(--text-color-light);
+    border-radius: 2rem;
+    padding: 1.5rem;
+    font-size: var(--normal-font-size);
+    font-family: var(--title-font);
+    color: var(--title-color);
+    background: none;
+    outline: none;
+    z-index: 1;
+}
+
+.user_tag{
+    position: absolute;
+    top: -.75rem;
+    left: 1.25rem;
+    z-index: 10;
+    background-color: var(--accent-color);/* this makes it seem like breaking the line  */
+    color: var(--title-color);
+    font-size: var(--smallest-font-size);
+    font-weight: var(--font-medium);
+    padding: .35rem;
+}
+
+.input_box-comments-checkbox{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+

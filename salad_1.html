@@ -101,7 +101,7 @@
             </div>
         </div>
     </div>
-</section>
+  </section>
 
   <!-- ########################## MAIN ############################ -->
   <section class="recipe_main">
@@ -316,7 +316,7 @@
   </section>
 
   <!-- ########################## COMMENTS ############################ -->
-  <section id="comments" class="comments">
+  <section id="user_comment" class="user_comment">
     <div class="form_link">
       <h1 class="form_link-title">
         Already made this?
@@ -328,9 +328,49 @@
     </div>
 
     <div class="form_container">
-      <div class="form_inner">
+      <div class="form_inner form_hide" id="form-inner">
         <form action="#" class="comments_form">
-          
+          <div class="input_box-comments">
+            <label for="name" class="user_tag" id="user-name">
+              Names: 
+            </label>
+            <input type="text" required placeholder="Sarah Johnson" autocomplete="cc-name" class="input_comment">
+          </div>
+
+          <div class="input_box-comments">
+            <label for="age" class="user_tag" id="user-age">
+              Age: 
+            </label>
+            <input type="number" required placeholder="25" class="input_comment">
+          </div>
+
+          <div class="input_box-comments-checkbox">
+            <label for="rate_easy" class="user_tag-checkbox" id="user-rate-easy">
+              Was the recipe easy? 
+            </label>
+            <input type="checkbox" required class="input_comment_checkbox">
+          </div>
+
+          <div class="input_box-comments-checkbox">
+            <label for="rate_delicious" class="user_tag-checkbox" id="user-rate-delicious">
+              Was it delicious? 
+            </label>
+            <input type="checkbox" required class="input_comment_checkbox">
+          </div>
+
+          <div class="input_box-comments-checkbox">
+            <label for="cook_again" class="user_tag-checkbox" id="user-cook-again">
+              Would you make it again? 
+            </label>
+            <input type="checkbox" required class="input_comment_checkbox">
+          </div>
+
+          <div class="input_box-comments">
+            <label for="age" class="user_tag" id="user_age">
+              Your comment 
+            </label>
+            <textarea name="user_comment-text" class="input_comment" id="user-comment-text" maxlength="2500" placeholder="Your comment goes here"></textarea>
+          </div>
         </form>
       </div>
     </div>

@@ -200,3 +200,12 @@ checkItem.forEach(unchecked => {
       })
   });
 });
+
+
+// ##################### COMMENT FORM ##################
+const commentBtn = document.getElementById('form-link');
+const formInner = document.getElementById('form-inner');
+
+commentBtn.addEventListener('click', () => {
+  formInner.classList.toggle('form_hide');
+});
