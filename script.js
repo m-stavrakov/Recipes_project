@@ -209,3 +209,51 @@ const formInner = document.getElementById('form-inner');
 commentBtn.addEventListener('click', () => {
   formInner.classList.toggle('form_hide');
 });
+
+// ##################### ADDING THE COMMENT ##################
+const submitBtn = document.getElementById('submit_btn');
+const commentBox = document.querySelector('.comment_display-container');
+let userNameInput = document.getElementById('user-name');
+let userAgeInput = document.getElementById('user-age');
+let userRateEasyInput = document.getElementById('user-rate-easy');
+let userRateDeliciousInput = document.getElementById('user-rate-delicious');
+let userRedoInput = document.getElementById('user-cook-again');
+let userCommentInput = document.getElementById('user-comment-text');
+
+submitBtn.addEventListener('click', () => {
+  const commentContainer = document.createElement('div');
+  commentContainer.classList.add('comment_display');
+
+  // USERNAME
+  let userName = userNameInput.value;
+
+  const displayUserName = document.createElement('h6');
+  displayUserName.classList.add('comment_user-name');
+
+  displayUserName.textContent = userName;
+  userNameInput.value = '';
+
+  // AGE
+  let userAge = userAgeInput.value;
+  
+  const displayUserAge = document.createElement('small');
+  displayUserAge.classList.add('comment_user-age');
+
+  displayUserAge.textContent = userAge;
+  userAgeInput.value = '';
+
+  //TEXT COMMENT
+  let userComment = userCommentInput.value;
+
+  const displayUserComment = document.createElement('p');
+  displayUserComment.classList.add('comment_user-comment');
+
+  displayUserComment.textContent = userComment;
+  userCommentInput.value = '';
+
+  [displayUserName, displayUserAge].forEach(child => {
+    commentContainer.appendChild(child);
+  });
+
+  commentBox.appendChild(commentContainer);
+});

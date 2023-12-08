@@ -1003,11 +1003,6 @@ strong{
     margin-bottom: 30px;
 }
 
-.form_link-title{
-    font-size: var(--biggest-font-size);
-    font-family: var(--smaller-titles-font);
-}
-
 .form_link-button{
     width: 25%;
     padding: 10px;
@@ -1073,7 +1068,7 @@ strong{
     top: -.75rem;
     left: 1.25rem;
     z-index: 10;
-    background-color: var(--accent-color);/* this makes it seem like breaking the line  */
+    background-color: var(--accent-color);
     color: var(--title-color);
     font-size: var(--smallest-font-size);
     font-weight: var(--font-medium);
@@ -1088,3 +1083,61 @@ strong{
     margin-left: 10px;
 }
 
+.user_submit{
+    width: 25%;
+    padding: 10px;
+    background: none;
+    border: 2px solid var(--text-color-light);
+    border-radius: 2rem;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color .4s ease-out;
+}
+
+.user_submit:hover{
+    background-color: var(--hover-color);
+    color: white;
+}
+
+/* COMMENTS DISPLAY */
+.comment_display-container{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.comments_title{
+    font-size: var(--biggest-font-size);
+    font-family: var(--smaller-titles-font);
+}
+
+.comment_display-container > .comments_title{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.comment_display{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 5px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.comment_user-name{
+    font-size: var(--normal-font-size);
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.comment_user-comment{
+    margin-top: 20px;
+}
+
+.comment_user-satisfaction{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    font-size: 2rem;
+    margin: 20px 0;
+}

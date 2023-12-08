@@ -318,7 +318,7 @@
   <!-- ########################## COMMENTS ############################ -->
   <section id="user_comment" class="user_comment">
     <div class="form_link">
-      <h1 class="form_link-title">
+      <h1 class="comments_title">
         Already made this?
       </h1>
 
@@ -329,56 +329,90 @@
 
     <div class="form_container">
       <div class="form_inner form_hide" id="form-inner">
-        <form action="#" class="comments_form">
+        <form action="#" class="comments_form" name="user_feedback">
           <div class="input_box-comments">
-            <label for="name" class="user_tag" id="user-name">
+            <label class="user_tag">
               Names: 
             </label>
-            <input type="text" required placeholder="Sarah Johnson" autocomplete="cc-name" class="input_comment">
+            <input type="text" required placeholder="Sarah Johnson" autocomplete="cc-name" class="input_comment"  id="user-name"/>
           </div>
 
           <div class="input_box-comments">
-            <label for="age" class="user_tag" id="user-age">
+            <label class="user_tag">
               Age: 
             </label>
-            <input type="number" required placeholder="25" class="input_comment">
+            <input type="number" required placeholder="25" class="input_comment" id="user-age"/>
           </div>
 
           <div class="input_box-comments-checkbox">
-            <label for="rate_easy" class="user_tag-checkbox" id="user-rate-easy">
+            <label class="user_tag-checkbox">
               Was the recipe easy? 
             </label>
-            <input type="checkbox" required class="input_comment_checkbox">
+            <input type="checkbox" class="input_comment_checkbox" id="user-rate-easy"/>
           </div>
 
           <div class="input_box-comments-checkbox">
-            <label for="rate_delicious" class="user_tag-checkbox" id="user-rate-delicious">
+            <label class="user_tag-checkbox">
               Was it delicious? 
             </label>
-            <input type="checkbox" required class="input_comment_checkbox">
+            <input type="checkbox" class="input_comment_checkbox" id="user-rate-delicious"/>
           </div>
 
           <div class="input_box-comments-checkbox">
-            <label for="cook_again" class="user_tag-checkbox" id="user-cook-again">
+            <label class="user_tag-checkbox">
               Would you make it again? 
             </label>
-            <input type="checkbox" required class="input_comment_checkbox">
+            <input type="checkbox" class="input_comment_checkbox" id="user-cook-again"/>
           </div>
 
           <div class="input_box-comments">
-            <label for="age" class="user_tag" id="user_age">
+            <label class="user_tag">
               Your comment 
             </label>
             <textarea name="user_comment-text" class="input_comment" id="user-comment-text" maxlength="2500" placeholder="Your comment goes here"></textarea>
           </div>
+
+          <button type="button" id="submit_btn" class="user_submit">
+            Submit
+          </button>
         </form>
       </div>
     </div>
 
 
-    <h2 class="comments_title">
-      Comments
-    </h2>
+    <div class="comment_display-container">
+      <h2 class="comments_title">
+        Comments
+      </h2>
+
+      <!-- <div class="comment_display">
+        <h6 class="comment_user-name">
+          names
+        </h6>
+
+        <small class="comment_user-age" id="user-age-comment">
+          age
+        </small>
+
+        <p class="comment_user-comment" id="user-input-comment">
+          User comment
+        </p>
+
+        <div class="comment_user-satisfaction">
+          <small class="user_satisfaction-icons" id="user-easy-comment">
+            <i class="ri-emotion-line"></i>
+          </small>
+
+          <small class="user_satisfaction-icons" id="user-delicious-comment">
+            <i class="ri-emotion-sad-line"></i>
+          </small>
+
+          <small class="user_satisfaction-icons" id="user-redo-comment">
+            <i class="ri-emotion-line"></i>
+          </small>
+        </div>
+      </div> -->
+    </div>
 
 
   </section>
