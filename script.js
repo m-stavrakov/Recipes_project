@@ -10,7 +10,6 @@ const eye = document.getElementById('eye');
 const slides = document.querySelectorAll('.slide');
 const prevSlide = document.querySelector('.prev');
 const nextSlide = document.querySelector('.next');
-// const carouselBtn = document.querySelectorAll('[data-carousel-btn]');
 
 // ##################### OPEN AND CLOSE LOGIN ##################
 logIn.addEventListener('click', () => {
@@ -182,23 +181,55 @@ toggleCategories.forEach(category => {
 
 
 // ##################### CHECK LIST ##################
-const checkItem = document.querySelectorAll('.check');
-const imageChange = document.querySelectorAll('.unchecked_circle');
+// const checkItem = document.querySelectorAll('.check');
+// const imageChange = document.querySelectorAll('.unchecked_circle');
 
-checkItem.forEach(unchecked => {
-  unchecked.addEventListener('click', function() {
-    this.classList.toggle('checked');
-    });
-    imageChange.forEach(circle => {
-      circle.addEventListener('click', function(){
-        const currentImg = circle.getAttribute('src');
-        const unchecked = './images/circle-regular.png';
-        const checked = './images/circle_checked-removebg-preview.png';
+// checkItem.forEach(unchecked => {
+//   unchecked.addEventListener('click', function() {
+//     this.classList.toggle('checked');
+//     });
+//     imageChange.forEach(circle => {
+//       circle.addEventListener('click', function(){
+//         const currentImg = circle.getAttribute('src');
+//         const unchecked = './images/circle-regular.png';
+//         const checked = './images/circle_checked-removebg-preview.png';
     
-        const newScr = currentImg === unchecked ? checked : unchecked;
-        circle.setAttribute('src', newScr);
-      })
+//         const newScr = currentImg === unchecked ? checked : unchecked;
+//         circle.setAttribute('src', newScr);
+//       })
+//   });
+// });
+
+document.addEventListener('DOMContentLoaded', function() {
+  const items = document.querySelectorAll('.ingredients_list-items, .preparation_list-items');
+
+  items.forEach(item => {
+    const ingredientsText = item.querySelector('.ingredients_text');
+    const circle = item.querySelector('.unchecked_circle');
+
+    ingredientsText.addEventListener('click', () => {
+      toggleItemState(ingredientsText, circle);
+    });
+
+    circle.addEventListener('click', () => {
+      toggleItemState(ingredientsText, circle);
+    });
   });
+
+  function toggleItemState(ingredientsText, circle){
+    ingredientsText.classList.toggle('checked');
+    circle.classList.toggle('checked');
+    toggleImage(circle);
+  }
+
+  function toggleImage(circle) {
+    const currentImg = circle.getAttribute('src');
+    const unchecked = './images/circle-regular.png';
+    const checked = './images/circle_checked-removebg-preview.png';
+
+    const  newSrc = currentImg === unchecked ? checked : unchecked;
+    circle.setAttribute('src', newSrc);
+  }
 });
 
 
@@ -215,10 +246,50 @@ const submitBtn = document.getElementById('submit_btn');
 const commentBox = document.querySelector('.comment_display-container');
 let userNameInput = document.getElementById('user-name');
 let userAgeInput = document.getElementById('user-age');
-let userRateEasyInput = document.getElementById('user-rate-easy');
 let userRateDeliciousInput = document.getElementById('user-rate-delicious');
-let userRedoInput = document.getElementById('user-cook-again');
 let userCommentInput = document.getElementById('user-comment-text');
+let comments = [];
+
+function displayComments() {
+  commentBox.innerHTML = '';
+
+  if (localStorage.getItem('comment')){
+    comments = JSON.parse(localStorage.getItem('comment'));
+    for (let comment of comments) {
+      const commentContainer = document.createElement('div');
+      commentContainer.classList.add('comment_display');
+
+      const displayUserName = document.createElement('h6');
+      displayUserName.classList.add('comment_user-name');
+      displayUserName.textContent = comment.name;
+
+      const displayUserAge = document.createElement('small');
+      displayUserAge.classList.add('comment_user-age');
+      displayUserAge.textContent = comment.age;
+
+      const displayUserComment = document.createElement('p');
+      displayUserComment.classList.add('comment_user-comment');
+      displayUserComment.textContent = comment.comment;
+
+      const displayUserRateDelicious = document.createElement('small');
+      displayUserRateDelicious.classList.add('comment_user-satisfaction');
+
+      comment.delicious
+        ? (displayUserRateDelicious.innerHTML = 'Was it delicious?: <i class="ri-emotion-line"></i>')
+        : (displayUserRateDelicious.innerHTML = 'Was it delicious?: <i class="ri-emotion-sad-line"></i>');
+
+      [displayUserName, displayUserAge, displayUserComment, displayUserRateDelicious].forEach(
+        (child) => {
+          commentContainer.appendChild(child);
+        }
+      );
+
+      commentBox.prepend(commentContainer);
+    }
+  }
+}
+
+displayComments();
 
 submitBtn.addEventListener('click', () => {
   const commentContainer = document.createElement('div');
@@ -251,9 +322,42 @@ submitBtn.addEventListener('click', () => {
   displayUserComment.textContent = userComment;
   userCommentInput.value = '';
 
-  [displayUserName, displayUserAge].forEach(child => {
+  //DELICIOUS RECIPE
+  let userRateDelicious = userRateDeliciousInput.checked
+
+  const displayUserRateDelicious = document.createElement('small');
+  displayUserRateDelicious.classList.add('comment_user-satisfaction');
+
+  userRateDelicious 
+    ? displayUserRateDelicious.innerHTML = 'Was it delicious?: <i class="ri-emotion-line"></i>' 
+    : displayUserRateDelicious.innerHTML = 'Was it delicious?: <i class="ri-emotion-sad-line"></i>';
+
+  //APPENDING TO CONTAINER
+  [displayUserName, displayUserAge, displayUserComment, displayUserRateDelicious].forEach(child => {
     commentContainer.appendChild(child);
   });
 
   commentBox.appendChild(commentContainer);
+
+
+  let commentData = {
+    'name': userName,
+    'age': userAge,
+    'comment': userComment,
+    'delicious': userRateDelicious
+  }
+
+  comments.push(commentData);
+  localStorage.setItem('comment', JSON.stringify(comments));
+
+  displayComments();
+
+  //SCROLL BEHAVIOR
+  const firstContainer = document.querySelector('.comment_display');
+  if (firstContainer){
+    firstContainer.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  }
 });

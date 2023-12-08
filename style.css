@@ -129,8 +129,8 @@ a{
 .wrapper{
     position: absolute;
     width: 360px;
-    top: 25%;
     height: 430px;
+    top: 25%;
     background-color: var(--body-color);
     border: 2px solid rgba(255, 255, 255, .5);
     border-radius: 20px;
@@ -1120,7 +1120,6 @@ strong{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 5px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
@@ -1136,8 +1135,11 @@ strong{
 
 .comment_user-satisfaction{
     display: flex;
-    gap: 20px;
     align-items: center;
-    font-size: 2rem;
-    margin: 20px 0;
+    font-size: .75rem;
+    margin: 10px 0;
+}
+
+.comment_user-satisfaction > i{
+    font-size: 1.25rem;
 }
