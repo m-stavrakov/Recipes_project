@@ -181,25 +181,6 @@ toggleCategories.forEach(category => {
 
 
 // ##################### CHECK LIST ##################
-// const checkItem = document.querySelectorAll('.check');
-// const imageChange = document.querySelectorAll('.unchecked_circle');
-
-// checkItem.forEach(unchecked => {
-//   unchecked.addEventListener('click', function() {
-//     this.classList.toggle('checked');
-//     });
-//     imageChange.forEach(circle => {
-//       circle.addEventListener('click', function(){
-//         const currentImg = circle.getAttribute('src');
-//         const unchecked = './images/circle-regular.png';
-//         const checked = './images/circle_checked-removebg-preview.png';
-    
-//         const newScr = currentImg === unchecked ? checked : unchecked;
-//         circle.setAttribute('src', newScr);
-//       })
-//   });
-// });
-
 document.addEventListener('DOMContentLoaded', function() {
   const items = document.querySelectorAll('.ingredients_list-items, .preparation_list-items');
 

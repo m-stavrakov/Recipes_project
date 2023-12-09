@@ -756,29 +756,6 @@ small{
     color: var(--contrast-text-color);
 }
 
-/* SCREEN DIMENSIONS */
-@media screen and (max-width: 767px){
-    .header_list{
-        margin: 0;
-    }
-
-    .carousel-inner{
-        height: 50vh;
-    }
-
-    .carousel_text{
-        font-size: var(--h3-font-size);
-    }
-
-    .footer_container{
-        flex-direction: column;
-    }
-
-    .footer_inner{
-        width: 100%;
-    }
-}
-
 /* ######################## SALAD RECIPE 1 ###################*/
 .header{
     margin-bottom: 30px;
@@ -789,6 +766,13 @@ small{
     align-items: center;
     justify-content: space-between;
     gap: 40px;
+}
+
+.small_logo-nav{
+    font-family: var(--title-font);
+    text-transform: capitalize;
+    font-size: var(--h1-font-size);
+    transition: color .3s ease-in-out;
 }
 
 .header_recipe-list a{
@@ -1142,4 +1126,96 @@ strong{
 
 .comment_user-satisfaction > i{
     font-size: 1.25rem;
+}
+
+/* SCREEN DIMENSIONS */
+@media screen and (767px <= width <= 1024px){
+    .recipe_main{
+        width: 95%;
+    }
+
+    .user_comment{
+        width: 95%;
+    }
+
+    .comments_form{
+        margin-left: 0;
+    }
+}
+@media screen and (max-width: 767px){
+    .header_list{
+        margin: 0;
+    }
+
+    .carousel-inner{
+        height: 50vh;
+    }
+
+    .carousel_text{
+        font-size: var(--h3-font-size);
+    }
+
+    .footer_container{
+        flex-direction: column;
+    }
+
+    .footer_inner{
+        width: 100%;
+    }
+
+    .info{
+        width: 100%;
+    }
+
+    .header_recipe-nav{
+        gap: 10px;
+    }
+
+    .small_logo-nav{
+        text-align: center;
+    }
+
+    .recipe_main{
+        width: 95%;
+    }
+
+    .recipe_author_new{
+        gap: 10px;
+    }
+
+    .prepare_times{
+        justify-content: center;
+    }
+
+    .recipe_page-title{
+        text-align: center;
+    }
+
+    .ingredients_list{
+        flex-direction: column;
+    }
+
+    .user_comment{
+        width: 95%;
+    }
+
+    .form_link-button{
+        width: 40%;
+    }
+
+    .comments_form{
+        margin-left: 0;
+    }
+
+    .input_comment{
+        width: 100%;
+    }
+
+    .form_inner{
+        width: 100%;
+    }
+
+    .user_submit{
+        width: 50%;
+    }
 }
