@@ -23,10 +23,10 @@ closeBtn.addEventListener('click', () => {
 // ##################### INTERACTIVITY WITH INPUT ##################
 document.addEventListener('mousedown', (event) => {
     if (emailInput.contains(event.target)) {
-        iconEmail.classList.add('test');
+        iconEmail.classList.add('icon-color');
         document.getElementById('email-box').classList.add('changed');
       } else {
-        iconEmail.classList.remove('test');
+        iconEmail.classList.remove('icon-color');
         document.getElementById('email-box').classList.remove('changed');
       }
 });
@@ -102,17 +102,19 @@ let ratings = [];
 
 for (let star of stars){
   star.addEventListener('click', function(){
-    let ratingChildren = star.parentElement.children;
-    for(let child of ratingChildren){
+    let ratingChildren = star.parentElement.children; //gets a collection of all the children elements of the parent element
+    for(let child of ratingChildren){ //looping through each child element 
       if(child.getAttribute('data-clicked')){
-        return false; //preventing us to rate the same product twice
+        return false; //preventing to rate the same product twice
       }
     }
     
+    //if the star has not been clicked it is assigned data-clicked
     this.setAttribute('data-clicked', 'true');
+
     // storing the ratings
-    let rating = this.dataset.rating;
-    let productId = this.parentElement.dataset.productid;
+    let rating = this.dataset.rating; //this selects the specific star that has been selected using the data-rating numbers
+    let productId = this.parentElement.dataset.productid; //this selects the specific product 
 
     let data = {
       'stars': rating,
@@ -124,13 +126,13 @@ for (let star of stars){
   });
 }
 
-//storing the rating even after reload
+//storing the rating after reload
 if (localStorage.getItem('rating')){
   ratings = JSON.parse(localStorage.getItem('rating'));
   for (let rating of ratings){
     for (let product of products){
       if (rating['product-id'] === product.dataset.productid){
-        let reversedStars = Array.from(product.children).reverse();
+        let reversedStars = Array.from(product.children).reverse(); //Retrieves all the child elements of the current product element and reverses them into an array
         let indexStars = parseInt(rating['stars']) - 1;
         reversedStars[indexStars].setAttribute('data-clicked', 'true');
       }
@@ -199,7 +201,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function toggleItemState(ingredientsText, circle){
     ingredientsText.classList.toggle('checked');
-    circle.classList.toggle('checked');
     toggleImage(circle);
   }
 
@@ -217,128 +218,159 @@ document.addEventListener('DOMContentLoaded', function() {
 // ##################### COMMENT FORM ##################
 const commentBtn = document.getElementById('form-link');
 const formInner = document.getElementById('form-inner');
+const formPresent = document.getElementById('user_comment');
 
-commentBtn.addEventListener('click', () => {
-  formInner.classList.toggle('form_hide');
-});
-
+if (formPresent){
+  commentBtn.addEventListener('click', () => {
+    formInner.classList.toggle('form_hide');
+  });
+}
 // ##################### ADDING THE COMMENT ##################
 const submitBtn = document.getElementById('submit_btn');
-const commentBox = document.querySelector('.comment_display-container');
+const commentBox = document.querySelector('.comment_display-box');
 let userNameInput = document.getElementById('user-name');
 let userAgeInput = document.getElementById('user-age');
 let userRateDeliciousInput = document.getElementById('user-rate-delicious');
 let userCommentInput = document.getElementById('user-comment-text');
 let comments = [];
 
-function displayComments() {
-  commentBox.innerHTML = '';
+if (formPresent){
+  function displayComments() {
+    commentBox.innerHTML = '';
 
-  if (localStorage.getItem('comment')){
-    comments = JSON.parse(localStorage.getItem('comment'));
-    for (let comment of comments) {
-      const commentContainer = document.createElement('div');
-      commentContainer.classList.add('comment_display');
+    if (localStorage.getItem('comment')){
+      comments = JSON.parse(localStorage.getItem('comment'));
+      for (let comment of comments) {
+        const commentContainer = document.createElement('div');
+        commentContainer.classList.add('comment_display');
 
-      const displayUserName = document.createElement('h6');
-      displayUserName.classList.add('comment_user-name');
-      displayUserName.textContent = comment.name;
+        const displayUserName = document.createElement('h6');
+        displayUserName.classList.add('comment_user-name');
+        displayUserName.textContent = comment.name;
 
-      const displayUserAge = document.createElement('small');
-      displayUserAge.classList.add('comment_user-age');
-      displayUserAge.textContent = comment.age;
+        const displayUserAge = document.createElement('small');
+        displayUserAge.classList.add('comment_user-age');
+        displayUserAge.textContent = comment.age;
 
-      const displayUserComment = document.createElement('p');
-      displayUserComment.classList.add('comment_user-comment');
-      displayUserComment.textContent = comment.comment;
+        const displayUserComment = document.createElement('p');
+        displayUserComment.classList.add('comment_user-comment');
+        displayUserComment.textContent = comment.comment;
 
-      const displayUserRateDelicious = document.createElement('small');
-      displayUserRateDelicious.classList.add('comment_user-satisfaction');
+        const displayUserRateDelicious = document.createElement('small');
+        displayUserRateDelicious.classList.add('comment_user-satisfaction');
 
-      comment.delicious
-        ? (displayUserRateDelicious.innerHTML = 'Was it delicious?: <i class="ri-emotion-line"></i>')
-        : (displayUserRateDelicious.innerHTML = 'Was it delicious?: <i class="ri-emotion-sad-line"></i>');
+        comment.delicious
+          ? (displayUserRateDelicious.innerHTML = 'Was it delicious?: <i class="ri-emotion-line"></i>')
+          : (displayUserRateDelicious.innerHTML = 'Was it delicious?: <i class="ri-emotion-sad-line"></i>');
 
-      [displayUserName, displayUserAge, displayUserComment, displayUserRateDelicious].forEach(
-        (child) => {
-          commentContainer.appendChild(child);
-        }
-      );
+        [displayUserName, displayUserAge, displayUserComment, displayUserRateDelicious].forEach(
+          (child) => {
+            commentContainer.appendChild(child);
+          }
+        );
 
-      commentBox.prepend(commentContainer);
+        commentBox.prepend(commentContainer);
+      }
     }
   }
-}
-
-displayComments();
-
-submitBtn.addEventListener('click', () => {
-  const commentContainer = document.createElement('div');
-  commentContainer.classList.add('comment_display');
-
-  // USERNAME
-  let userName = userNameInput.value;
-
-  const displayUserName = document.createElement('h6');
-  displayUserName.classList.add('comment_user-name');
-
-  displayUserName.textContent = userName;
-  userNameInput.value = '';
-
-  // AGE
-  let userAge = userAgeInput.value;
-  
-  const displayUserAge = document.createElement('small');
-  displayUserAge.classList.add('comment_user-age');
-
-  displayUserAge.textContent = userAge;
-  userAgeInput.value = '';
-
-  //TEXT COMMENT
-  let userComment = userCommentInput.value;
-
-  const displayUserComment = document.createElement('p');
-  displayUserComment.classList.add('comment_user-comment');
-
-  displayUserComment.textContent = userComment;
-  userCommentInput.value = '';
-
-  //DELICIOUS RECIPE
-  let userRateDelicious = userRateDeliciousInput.checked
-
-  const displayUserRateDelicious = document.createElement('small');
-  displayUserRateDelicious.classList.add('comment_user-satisfaction');
-
-  userRateDelicious 
-    ? displayUserRateDelicious.innerHTML = 'Was it delicious?: <i class="ri-emotion-line"></i>' 
-    : displayUserRateDelicious.innerHTML = 'Was it delicious?: <i class="ri-emotion-sad-line"></i>';
-
-  //APPENDING TO CONTAINER
-  [displayUserName, displayUserAge, displayUserComment, displayUserRateDelicious].forEach(child => {
-    commentContainer.appendChild(child);
-  });
-
-  commentBox.appendChild(commentContainer);
-
-
-  let commentData = {
-    'name': userName,
-    'age': userAge,
-    'comment': userComment,
-    'delicious': userRateDelicious
-  }
-
-  comments.push(commentData);
-  localStorage.setItem('comment', JSON.stringify(comments));
 
   displayComments();
 
-  //SCROLL BEHAVIOR
-  const firstContainer = document.querySelector('.comment_display');
-  if (firstContainer){
-    firstContainer.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
+  submitBtn.addEventListener('click', () => {
+    const commentContainer = document.createElement('div');
+    commentContainer.classList.add('comment_display');
+
+    // USERNAME
+    let userName = userNameInput.value;
+
+    const displayUserName = document.createElement('h6');
+    displayUserName.classList.add('comment_user-name');
+
+    displayUserName.textContent = userName;
+    userNameInput.value = '';
+
+    // AGE
+    let userAge = userAgeInput.value;
+    
+    const displayUserAge = document.createElement('small');
+    displayUserAge.classList.add('comment_user-age');
+
+    displayUserAge.textContent = userAge;
+    userAgeInput.value = '';
+
+    //TEXT COMMENT
+    let userComment = userCommentInput.value;
+
+    const displayUserComment = document.createElement('p');
+    displayUserComment.classList.add('comment_user-comment');
+
+    displayUserComment.textContent = userComment;
+    userCommentInput.value = '';
+
+    //DELICIOUS RECIPE
+    let userRateDelicious = userRateDeliciousInput.checked
+
+    const displayUserRateDelicious = document.createElement('small');
+    displayUserRateDelicious.classList.add('comment_user-satisfaction');
+
+    userRateDelicious 
+      ? displayUserRateDelicious.innerHTML = 'Was it delicious?: <i class="ri-emotion-line"></i>' 
+      : displayUserRateDelicious.innerHTML = 'Was it delicious?: <i class="ri-emotion-sad-line"></i>';
+
+    //APPENDING TO CONTAINER
+    [displayUserName, displayUserAge, displayUserComment, displayUserRateDelicious].forEach(child => {
+      commentContainer.appendChild(child);
     });
+
+    commentBox.appendChild(commentContainer);
+
+
+    let commentData = {
+      'name': userName,
+      'age': userAge,
+      'comment': userComment,
+      'delicious': userRateDelicious
+    }
+
+    comments.push(commentData);
+    localStorage.setItem('comment', JSON.stringify(comments));
+
+    displayComments();
+
+    //SCROLL BEHAVIOR
+    const firstContainer = document.querySelector('.comment_display');
+    if (firstContainer){
+      firstContainer.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+
+    displayComments();
+    displayCommentCount();
+  });
+
+//// ##################### COMMENT COUNT ##################
+  function displayCommentCount() {
+    const totalComments = comments.length;
+    const commentCountDisplay = document.getElementById('comment-count');
+    
+    if (commentCountDisplay){
+      commentCountDisplay.textContent = `(${totalComments})`;
+    }
   }
-});
+
+  window.addEventListener('load', () => {
+    displayCommentCount();
+  });
+
+}
+
+//// ##################### PRINTING BUTTON ##################
+const printBtn = document.getElementById('print-btn');
+
+if (printBtn){
+  printBtn.addEventListener('click', () => {
+    window.print();
+  })
+}

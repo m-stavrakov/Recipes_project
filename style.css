@@ -300,6 +300,10 @@ input[type = checkbox]{
     transform: scale(1);
 }
 
+.icon-color{
+    color: var(--contrast-text-color);
+}
+
 .changed{
     border-bottom: 2px solid var(--contrast-text-color);
 }
@@ -1092,6 +1096,7 @@ strong{
 }
 
 .comments_title{
+    display: inline-block;
     font-size: var(--biggest-font-size);
     font-family: var(--smaller-titles-font);
 }
@@ -1104,7 +1109,14 @@ strong{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin-top: 30px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.title-comments-count{
+    display: flex;
+    align-items:baseline;
+    font-size: var(--h2-font-size);
 }
 
 .comment_user-name{
@@ -1114,7 +1126,7 @@ strong{
 }
 
 .comment_user-comment{
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .comment_user-satisfaction{
